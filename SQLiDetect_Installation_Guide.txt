@@ -1,0 +1,45 @@
+# SQLiDetect Complete Installation Guide
+
+## System Requirements
+- Web Server: Apache 2.4+ or Nginx
+- Database: MySQL 5.7+ or MariaDB 10.3+
+- PHP: 7.4+ with PDO, mbstring, and cURL extensions
+- 50MB disk space
+
+## Installation Steps
+
+1. UPLOAD AND EXTRACT:
+   - Upload sqlidetect.zip to your server
+   - Extract to web root:
+     ```bash
+     unzip sqlidetect.zip -d /var/www/html/
+     ```
+
+2. SET PERMISSIONS:
+   ```bash
+   chmod -R 755 /var/www/html/sqlidetect/
+   chown -R www-data:www-data /var/www/html/sqlidetect/
+   ```
+
+3. RUN THE INSTALLER:
+   Access in your browser:
+   http://your-server-ip/sqlidetect/installation/install.php
+
+4. DATABASE CONFIGURATION:
+   - Create a MySQL database first
+   - Enter credentials in the installer:
+     - Host: localhost
+     - Username: your_db_user
+     - Password: your_db_password
+     - Database Name: sqlidetect
+
+5. COMPLETE SETUP:
+   - Register admin account at:
+     http://your-server-ip/sqlidetect/register.php
+   - Login to admin panel at:
+     http://your-server-ip/sqlidetect/admin/login.php
+
+## Troubleshooting
+- 500 Errors: Check PHP error logs
+- Database Issues: Verify MySQL is running
+- Permission Errors: Recheck chmod/chown commands
